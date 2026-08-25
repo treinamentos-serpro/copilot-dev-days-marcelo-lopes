@@ -16,6 +16,15 @@ This repo is a Spring Boot social bingo app. The browser page is served by Thyme
 - Use utility classes in `socops/src/main/resources/static/css/app.css` before adding ad hoc styling.
 - Update tests in `socops/src/test/java/com/socops/service/BoardAssemblerTests.java` whenever gameplay changes.
 
+## Design guide
+
+- Keep the visual direction Cyberpunk Neon with a night-city atmosphere: graphite backgrounds, electric cyan, hot pink, and yellow victory accents.
+- Treat the board as the primary experience. Keep the 5x5 grid stable, readable, and responsive on narrow screens; do not let labels overflow or resize tiles unexpectedly.
+- Use the existing visual language in `socops/src/main/resources/templates/game.html` and `socops/src/main/resources/static/css/app.css`: HUD framing, restrained glow, geometric texture, sharp edges, and high-contrast state changes.
+- Preserve distinct visual states for open, selected, free, and winning cells. Keep the center free cell visually identifiable and disabled.
+- Prefer CSS-only atmosphere and motion. Keep animations purposeful, provide visible keyboard focus, and respect `prefers-reduced-motion`.
+- Keep visible interface copy in English unless the task explicitly requests localization. Avoid adding frontend dependencies for visual effects without a clear need.
+
 ## Quick map
 
 - `socops/src/main/java/com/socops/web/BingoRestController.java` — serves `/` and `/api/bingo/fresh-board`.
