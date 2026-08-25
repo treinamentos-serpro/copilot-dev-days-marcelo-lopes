@@ -53,7 +53,10 @@ public final class BoardAssembler {
     /*  Cell toggling                                                      */
     /* ------------------------------------------------------------------ */
 
-    /** Return a copy of the board with the given cell's selection toggled (free cells are immune). */
+    /**
+     * Return a copy of the board with the given cell's selection toggled.
+     * Free cells remain immune to changes.
+     */
     public static List<BingoCell> flipCell(List<BingoCell> board, int cellId) {
         List<BingoCell> updatedBoard = new ArrayList<>(board.size());
         for (BingoCell tile : board) {
